@@ -26,7 +26,9 @@ INNER JOIN subgenres ON subgenres.id = series.subgenre_id
 end
 
 def select_series_title_with_most_human_characters
-  "SELECT species,count(species) FROM characters WHERE series_id = 1"
+  "SELECT species,count(species),series_id FROM characters WHERE species = 'Human'
+GROUP BY series_id
+ORDER BY count(species) desc"
 end
 
 def select_character_names_and_number_of_books_they_are_in
