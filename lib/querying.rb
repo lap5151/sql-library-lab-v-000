@@ -12,7 +12,7 @@ end
 
 
 def select_value_and_count_of_most_prolific_species
-  "SELECT species FROM characters
+  "SELECT species,count(species) FROM characters
 GROUP BY species
 ORDER BY count(species) DESC
 LIMIT 1"
